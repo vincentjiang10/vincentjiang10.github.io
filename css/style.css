@@ -34,8 +34,8 @@ html {
 }
 
 .sidenav .profilePic img {
-  transform: scale(1.5);
-
+  transform: scale(1.6);
+  transform-origin: center;
 }
 
 .sidenav .profileDesc {
