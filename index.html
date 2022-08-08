@@ -9,15 +9,18 @@
   <meta name="description" content="Vincent Jiang's Portfolio" />
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo">
+  <script src="js/scrollEffect.js" defer></script>
 </head>
 
 <body style="background-color: aliceblue; color: black">
   <div class="theme"></div>
 
   <!-- Sidebar nav -->
-  <div class="sidenav">
+  <section class="sidenav">
     <div class="profilePic">
-      <img src="assets/images/profilePic.jpg" alt="profile picture">
+      <div style="border-radius: 50%; width: 180px; height: 180px; overflow: hidden;">
+        <img src="assets/images/profilePic.jpg" alt="profile picture" width="200px">
+      </div>
     </div>
     <div class="profileDesc">
       Vincent Jiang
@@ -32,12 +35,12 @@
     <div class="footer">
       Made with <span class="heart">&hearts;</span> by Vincent Jiang &copy; 2022
     </div>
-  </div>
+  </section>
 
-  <div class="content">
+  <section class="content">
     <!-- About Me section -->
     <div id="about">
-      <div class="contentItem">
+      <div class="contentItem show">
         <div class="header">ABOUT</div>
         <div class="body">Test Description</div>
       </div>
@@ -90,7 +93,7 @@
         <div class="body">Test Description</div>
       </div>
     </div>
-  </div>
+  </section>
 </body>
 
 </html>
