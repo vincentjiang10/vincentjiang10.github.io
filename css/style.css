@@ -5,10 +5,10 @@ html {
 /* The sidebar menu */
 .sidenav {
   height: 100vh;
-  width: 220px;
+  width: 250px;
   position: fixed;
   top: 0px;
-  left: 30px;
+  left: calc(50vw - 650px);
   z-index: 1;
   background-color: rgb(228, 239, 248);
   padding: 100px 10px;
@@ -27,15 +27,21 @@ html {
   height: 170px;
   border-radius: 50%;
   background-color: royalblue;
-  margin-left: 15px;
+  margin-left: 30px;
   margin-top: -40px;
+  margin-bottom: -40px;
   overflow: hidden;
+}
+
+.sidenav .profilePic img {
+  transform: scale(1.5);
+
 }
 
 .sidenav .profileDesc {
   font-size: x-large;
   font-family: "Exo", serif;
-  margin: 20px 0px;
+  margin: 50px 0px;
 }
 
 /* The navigation menu links */
@@ -46,13 +52,12 @@ html {
   font-size: 12px;
   color: royalblue;
   text-decoration: underline 0.1em rgba(0, 0, 0, 0);
-  text-underline-offset: 0.2em;
-  transition: text-decoration-color 500ms;
+  text-underline-offset: 0.5em;
+  transition: text-decoration-color 300ms;
 }
 
 .sidenav a:hover {
   color: darkblue;
-  text-underline-offset: 0.5em;
   text-decoration-color: darkblue;
 }
 
@@ -70,8 +75,9 @@ html {
 
 .content {
   position: absolute;
+  width: 1000px;
   top: 0;
-  left: 300px;
+  left: calc(50vw - 350px);
 }
 
 .contentItem {
