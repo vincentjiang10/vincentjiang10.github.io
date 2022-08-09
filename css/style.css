@@ -8,7 +8,7 @@ html {
   width: 250px;
   position: fixed;
   top: 0px;
-  left: calc(50vw - 650px);
+  left: calc(50vw - min(1250px, calc(100vw - 100px))/2);
   z-index: 1;
   background-color: rgb(228, 239, 248);
   padding: 100px 10px;
@@ -28,13 +28,11 @@ html {
   border-radius: 50%;
   background-color: royalblue;
   margin-left: 15px;
-  margin-top: 40px;
   overflow: hidden;
 }
 
 .sidenav .profilePic img {
-  transform: scale(1.6);
-  transform-origin: center;
+  transform: scale(1.4) translateX(-5px);
 }
 
 .sidenav .profileDesc {
@@ -76,18 +74,21 @@ html {
 
 .content {
   position: absolute;
-  width: 1000px;
+  max-width: 950px;
+  width: calc(100vw - 400px);
   top: 0;
-  left: calc(50vw - 350px);
+  left: calc(50vw - min(1250px, calc(100vw - 100px))/2 + 300px);
 }
 
 .contentItem {
   padding: 100px 10px;
   opacity: 0;
+  transform: translateX(100px);
   transition: 300ms;
 }
 
 .contentItem.show {
+  transform: translateX(0);
   opacity: 1;
 }
 
