@@ -2,6 +2,30 @@ html {
   scroll-behavior: smooth;
 }
 
+.theme {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 17vw;
+  border: thin solid aqua;
+  box-shadow: 2px 2px 50px aquamarine;
+  overflow: hidden;
+  background-image: url("../assets/images/themePic.jpeg");
+  background-size: 50%;
+  animation: translate 200s linear infinite;
+}
+
+@keyframes translate {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 10000px 0;
+  }
+}
+
 /* The sidebar menu */
 .sidenav {
   height: 100vh;
@@ -16,6 +40,14 @@ html {
   vertical-align: middle;
   text-align: center;
   box-shadow: 2px 2px 10px rgb(183, 209, 242);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+}
+
+/* hide scroll bar */
+.siden::-webkit-scrollbar {
+  display: none;
 }
 
 .sidenav div {
@@ -28,6 +60,7 @@ html {
   border-radius: 50%;
   background-color: royalblue;
   margin-left: 15px;
+  margin-top: -30px;
   overflow: hidden;
 }
 
@@ -39,7 +72,47 @@ html {
   font-size: x-large;
   font-family: "Exo", serif;
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: -20px;
+}
+
+/* icons */
+.sidenav .profileButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidenav .profileButtons .profileButton {
+  color: darkblue;
+  padding: 10px 10px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: ease-in-out 300ms;
+}
+
+.sidenav .profileButtons .profileButton:hover {
+  transform: translateY(-5px);
+  color: royalblue;
+}
+
+.sidenav .profileButtons .profileSpecialButton {
+  width: 25px;
+  height: 25px;
+  color: rgb(228, 239, 248);
+  background-color: darkblue;
+  border-radius: 5px;
+  position: relative;
+  margin-right: 20px;
+  left: 10px;
+  bottom: 1px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: ease-in-out 300ms;
+}
+
+.sidenav .profileButtons .profileSpecialButton:hover {
+  transform: translateY(-5px);
+  background-color: royalblue;
 }
 
 /* The navigation menu links */
@@ -61,14 +134,13 @@ html {
 
 .sidenav .footer {
   color: lightslategrey;
-  font-size: smaller;
+  font-size: 10px;
   font-family: "Lato", sans-serif;
   font-weight: 100;
-  padding-top: 50px;
+  margin-top: 30px;
 }
 
 .sidenav .footer .heart {
-  font-size: 14px;
   color: rgba(226, 62, 62, 0.952);
 }
 
@@ -76,14 +148,14 @@ html {
   position: absolute;
   max-width: 950px;
   width: calc(100vw - 400px);
-  top: 0;
+  top: 20vw;
   left: calc(50vw - min(1250px, calc(100vw - 100px))/2 + 300px);
 }
 
 .contentItem {
   padding: 100px 10px;
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(50px);
   transition: 300ms;
 }
 

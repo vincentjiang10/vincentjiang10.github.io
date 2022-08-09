@@ -1,5 +1,4 @@
-// -- Scrolling animation ---
-
+//-- Scrolling animation ---
 const contentItems = document.querySelectorAll(".contentItem");
 
 const observer = new IntersectionObserver(entries => {
@@ -15,17 +14,16 @@ contentItems.forEach(contentItem => {
   observer.observe(contentItem);
 });
 
-// -- Remove anchor link in URL when clicked ---
-
+//-- Remove anchor link in URL when clicked --
 // when the DOM has fully loaded
 $(document).ready(() => {
   const anchor = $(".sidenav div");
   // when clicked
   anchor.click(() => {
-    setTimeout(() => { removeHash(); }, 10);
+    setTimeout(() => { removeHash(); }, 0);
   });
 })
 
 const removeHash = () => {
-  history.replaceState('', document.title, `${window.location.origin}${window.location.pathname}${window.location.search}`);
+  history.replaceState("", document.title, `${window.location.origin}${window.location.pathname}${window.location.search}`);
 }
