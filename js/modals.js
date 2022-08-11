@@ -40,7 +40,7 @@ const handleDownClick = (parentObj, currentObj) => {
     currentObj = parentObj;
     parentObj = parentObj.parent();
   }
-  parentObj.height("auto");
+  parentObj.height("max-content");
   let height = parentObj.css("height");
   parentObj.height("250px");
   parentObj.height(height);
@@ -71,4 +71,6 @@ const handleUpClick = (parentObj) => {
     "height": "32px"
   });
   setTimeout(() => { downArrowObj.css("display", "block") }, 800);
+  let position = parentObj.offset().top;
+  window.scrollTo(0, position);
 }

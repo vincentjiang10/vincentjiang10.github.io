@@ -180,7 +180,7 @@ html {
 }
 
 .contentItem .body .bodyText {
-  transform: translateY(50px);
+  transform: translateY(70px);
   transition: ease-in-out 500ms;
   opacity: 0;
   margin: 0px 5%;
@@ -204,7 +204,7 @@ html {
   box-shadow: 2px 2px 10px rgb(183, 209, 242);
   background-color: rgb(228, 239, 248);
   transition: 400ms ease-in-out;
-  transform: translateY(50px);
+  transform: translateY(70px);
   opacity: 0;
   overflow: hidden;
 }
@@ -212,38 +212,6 @@ html {
 .modalPreview.show {
   opacity: 1;
   transform: translateY(0);
-}
-
-.modalPreview:hover {
-  transform: translateY(-10px);
-  box-shadow: 2px 8px 25px rgb(183, 209, 242);
-}
-
-.modalPreview .heading {
-  pointer-events: none;
-  padding: 10px;
-  color: darkblue;
-  font-weight: 700;
-  font-size: large;
-  font-family: "Exo", serif;
-  text-align: center;
-}
-
-/* Include logo picture (left) and description (right) */
-.modalPreview .body {
-  pointer-events: none;
-  display: flex;
-}
-
-.modalPreview .body .logo {
-  width: 200px;
-  height: 200px;
-  padding: 10px 10px;
-}
-
-.modalPreview .body .text {
-  height: 200px;
-  padding: 10px 10px;
 }
 
 .modalPreview.show .downArrow {
@@ -278,4 +246,86 @@ html {
   }
 
   100% {}
+}
+
+.modalPreview:hover {
+  transform: translateY(-10px);
+  box-shadow: 2px 8px 25px rgb(183, 209, 242);
+}
+
+/* Include logo picture (left) and description (right) */
+.modalPreview .preview {
+  pointer-events: none;
+  display: flex;
+}
+
+.modalPreview .preview .logo {
+  pointer-events: all;
+  margin: 35px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(rgb(234, 215, 105), royalblue);
+  border-radius: 40px;
+  border: thin darkblue 5px;
+}
+
+.modalPreview .preview .logo img {
+  position: relative;
+  border-radius: 30px;
+  box-shadow: 0px 0px 20px rgb(218, 97, 21);
+  left: 15px;
+  top: 15px;
+  width: 150px;
+  height: 150px;
+}
+
+.modalPreview .preview .heading {
+  padding-top: 30px;
+  color: darkblue;
+  font-weight: 700;
+  font-size: larger;
+  font-family: "Exo", serif;
+}
+
+.modalPreview .preview .subHeading {
+  padding-top: 10px;
+  font-family: "Exo", serif;
+}
+
+.modalPreview .preview .buttons {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  pointer-events: all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalPreview .preview .button {
+  color: darkblue;
+  padding: 10px 10px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: ease-in-out 300ms;
+}
+
+.modalPreview .preview .button:hover {
+  transform: translateY(-5px);
+  color: royalblue;
+}
+
+.modalPreview .preview .text {
+  padding-top: 20px;
+  height: 200px;
+  padding-right: 30px;
+  font-family: "Exo", serif;
+}
+
+.modalPreview .gif {
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 20px;
+  border: solid royalblue 0.5px;
+  box-shadow: 0px 0px 10px darkblue;
 }
