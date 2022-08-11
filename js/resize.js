@@ -1,6 +1,6 @@
 //-- Collapse sidebar if viewport height is less than 1000px --
 
-$(window).resize(() => {
+$(window).on("load resize", () => {
   const viewportWidth = $(window).width();
   const isCollapse = viewportWidth < 1000;
   $(".sidenav").css({
