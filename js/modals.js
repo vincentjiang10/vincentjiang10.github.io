@@ -40,12 +40,10 @@ const handleDownClick = (parentObj, currentObj) => {
     currentObj = parentObj;
     parentObj = parentObj.parent();
   }
-  parentObj.height("max-content");
+  parentObj.height("auto");
   let height = parentObj.css("height");
   parentObj.height("250px");
   parentObj.height(height);
-  // reveal up arrow
-  parentObj.find(".upArrow").css("opacity", "1");
   // hide down arrow
   parentObj.css("pointer-events", "none");
   currentObj.css({
@@ -56,6 +54,10 @@ const handleDownClick = (parentObj, currentObj) => {
     currentObj.css("display", "none");
     parentObj.css("pointer-events", "all");
   }, 800);
+  // reveal up arrow
+  setTimeout(() => {
+    parentObj.find(".upArrow").css("opacity", "1");
+  }, 100);
 }
 
 // handles up arrow click event on modal

@@ -11,4 +11,9 @@ $(window).on("load resize", () => {
     "width": `${viewportWidth - 400 + (isCollapse ? 250 : 0)}px`,
     "left": `${viewportWidth / 2 - Math.min(1250, viewportWidth - 100) / 2 + (isCollapse ? 0 : 300)}px`
   })
+  const modalPreviews = document.querySelectorAll(".modalPreview");
+  modalPreviews.forEach(modalPreview => {
+    const height = $(modalPreview).css("height");
+    height !== "250px" && $(modalPreview).height("auto");
+  })
 })
