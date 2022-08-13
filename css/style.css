@@ -214,7 +214,7 @@ html {
   opacity: 1;
 }
 
-.modalPreview.show .downArrow {
+.modalPreview .downArrow {
   width: 100%;
   height: 32px;
   color: darkblue;
@@ -226,7 +226,7 @@ html {
   animation: bobUpAndDown 1s linear infinite;
 }
 
-.modalPreview.show .upArrow {
+.modalPreview .upArrow {
   width: 100%;
   height: 32px;
   color: darkblue;
