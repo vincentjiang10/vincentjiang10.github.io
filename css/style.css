@@ -205,7 +205,7 @@ html {
   background-color: rgb(228, 239, 248);
   transition: 400ms ease-in-out;
   transform: translateX(70px);
-  opacity: 0;
+  opacity: 1;
   overflow: hidden;
 }
 
@@ -336,7 +336,7 @@ html {
   color: royalblue;
 }
 
-.modalPreview .rest .gif {
+.modalPreview .rest .video {
   width: 100%;
   margin: 20px 0px;
   border-radius: 20px;

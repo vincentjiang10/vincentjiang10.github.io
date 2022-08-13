@@ -72,7 +72,8 @@ const handleUpClick = (parentObj) => {
   downArrowObj.css({
     "height": "32px"
   });
+  $("html, body").animate({
+    scrollTop: parentObj.offset().top
+  }, "medium");
   setTimeout(() => { downArrowObj.css("display", "block") }, 800);
-  let position = parentObj.offset().top;
-  window.scrollTo(0, position);
 }
