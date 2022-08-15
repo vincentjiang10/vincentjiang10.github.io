@@ -26,9 +26,9 @@ modalPreviews.forEach(modalPreview => {
   observer.observe(modalPreview);
 });
 
-//-- Remove anchor link in URL when clicked --
 // when the DOM has fully loaded
 $(document).ready(() => {
+  //-- Remove anchor link in URL when clicked --
   const anchor = $(".sidenav div");
   // when clicked
   anchor.click(() => {
@@ -39,9 +39,3 @@ $(document).ready(() => {
 const removeHash = () => {
   history.replaceState("", document.title, `${window.location.origin}${window.location.pathname}${window.location.search}`);
 }
-
-//-- Reset to top of screen on reload --
-history.scrollRestoration = "manual";
-$(window).on('beforeunload', function () {
-  $(window).scrollTop(0);
-});
