@@ -180,14 +180,21 @@ html {
 }
 
 .contentItem .body .bodyText {
+  font-family: "Exo", serif;
   transform: translateX(70px);
   transition: ease-in-out 500ms;
   opacity: 0;
   margin: 0px 5%;
 }
 
+.contentItem .body .bodyText.award {
+  color: darkblue;
+  transition: ease-in-out 800ms;
+}
+
 .contentItem .body .bodyText.show {
   transform: translateX(0);
+  margin-bottom: 50px;
   opacity: 1;
 }
 
@@ -287,6 +294,10 @@ html {
 .modalPreview .preview .subHeading {
   padding-top: 10px;
   font-family: "Exo", serif;
+}
+
+.modalPreview .preview .subHeading span {
+  color: rgb(110, 111, 117);
 }
 
 .modalPreview .preview .buttons {
