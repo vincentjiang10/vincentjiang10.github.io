@@ -34,7 +34,14 @@ $(document).ready(() => {
   anchor.click(() => {
     setTimeout(() => { removeHash(); }, 0);
   });
-})
+  //-- Reset to top of screen on reload --
+  history.scrollRestoration = "manual";
+  $(window).on('beforeunload', () => {
+    $(window).animate({
+      scrollTop: 0
+    }, "medium");
+  });
+});
 
 const removeHash = () => {
   history.replaceState("", document.title, `${window.location.origin}${window.location.pathname}${window.location.search}`);
