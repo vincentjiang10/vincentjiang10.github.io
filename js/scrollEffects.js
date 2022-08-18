@@ -8,7 +8,7 @@ const observer = new IntersectionObserver(entries => {
     entry.target.classList.toggle("show", entry.isIntersecting);
   });
 }, {
-  threshold: 0.15,
+  threshold: 0.1,
 });
 
 // set observer to observe each contentItem header
