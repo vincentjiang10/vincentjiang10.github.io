@@ -7,12 +7,12 @@ html {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 17vw;
+  height: 27vw;
   border: thin solid aqua;
   box-shadow: 2px 2px 50px aquamarine;
   overflow: hidden;
-  background-image: url("../assets/images/themePic.jpeg");
-  background-size: 50%;
+  background-image: url("../assets/images/themePic.png");
+  background-size: 45%;
   animation: translate 100s linear infinite;
 }
 
@@ -150,7 +150,7 @@ html {
   position: absolute;
   max-width: 950px;
   width: calc(100vw - 400px);
-  top: 20vw;
+  top: 25vw;
   left: calc(50vw - min(1250px, calc(100vw - 100px))/2 + 300px);
 }
 

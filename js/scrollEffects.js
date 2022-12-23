@@ -1,4 +1,7 @@
-//-- Scrolling animation ---
+/**
+ * Scrolling animation
+ */
+
 const contentItemHeaders = document.querySelectorAll(".contentItem .header");
 const contentItemBodyTexts = document.querySelectorAll(".contentItem .body .bodyText");
 const modalPreviews = document.querySelectorAll(".body .modalPreview");

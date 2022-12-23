@@ -14,12 +14,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="js/scrollEffects.js" defer></script>
   <script src="js/resize.js" defer></script>
-  <script src="js/modals.js" defer></script>
+  <script src="js/modalEffects.js" defer></script>
 </head>
 
 <body style="background-color: aliceblue; color: black">
   <!-- Background theme animation -->
   <section class="theme"></section>
+  <!-- TODO: Wave animation -->
 
   <!-- Sidebar nav -->
   <section class="sidenav">
@@ -100,11 +101,14 @@
       </div>
     </div>
 
+    <script src="js/modals.js"></script>
+    <script src="js/content.js"></script>
+
     <!-- Education section -->
     <div id="education">
       <div class="contentItem">
         <div class="header">EDUCATION</div>
-        <div class="body">
+        <div class="body" id="education-body">
           <div class="modalPreview">
             <div class="preview">
               <div>
@@ -143,104 +147,19 @@
     <div id="experience">
       <div class="contentItem">
         <div class="header">EXPERIENCE</div>
-        <div class="body">
-          <div class="modalPreview">
-            <div class="preview">
-              <div>
-                <div class="logo" style="background: radial-gradient(rgb(116, 233, 204), royalblue)">
-                  <img src="assets/images/yoomi.png" style="box-shadow: 0px 0px 20px rgb(120, 246, 202);" />
-                </div>
-              </div>
-              <div>
-                <div class="heading">
-                  Yoomi
-                </div>
-                <div class="subHeading" style="color: royalblue">
-                  Software Engineer Intern
-                </div>
-                <div class="subHeading" style="color: black">
-                  August 2022 &#8212; Present
-                </div>
-                <div class="text">
-                  Refactor and develop code in TypeScript responsible for motion-tracking behavior,
-                  data collection, and animations on HTML5 Canvas to provide an interactive,
-                  gamified experience for in-patients in physical therapy during exercises
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modalPreview">
-            <div class="preview">
-              <div>
-                <div class="logo" style="background: radial-gradient(rgb(239, 124, 124), royalblue)">
-                  <img src="assets/images/cup-robotics.jpeg" style="box-shadow: 0px 0px 20px rgb(249, 77, 77);" />
-                </div>
-              </div>
-              <div>
-                <div class="heading">
-                  Cornell Cup Robotics
-                </div>
-                <div class="subHeading" style="color: royalblue">
-                  Software Engineer
-                </div>
-                <div class="subHeading" style="color: black">
-                  February 2022 &#8212; Present
-                </div>
-                <div class="text">
-                  Translate user speech inputs into text using machine learning and natural language processing
-                  as part of the CS Chatbot team.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modalPreview">
-            <div class="preview">
-              <div>
-                <div class="logo" style="background: radial-gradient(rgb(241, 234, 132), royalblue)">
-                  <img src="assets/images/cornell-cis.jpeg" style="box-shadow: 0px 0px 20px rgb(235, 180, 76);" />
-                </div>
-              </div>
-              <div>
-                <div class="heading">
-                  Cornell Bowers CIS
-                </div>
-                <div class="subHeading" style="color: royalblue">
-                  Course Consultant
-                </div>
-                <div class="subHeading" style="color: black">
-                  August 2022 &#8212; Present
-                </div>
-                <div class="text">
-                  Facilitate Object-Oriented Programming and Data Structures (CS 2110) discussion sections and assist
-                  students in course understanding, assignments, and software.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modalPreview">
-            <div class="preview">
-              <div>
-                <div class="logo" style="background: radial-gradient(rgb(239, 124, 124), royalblue)">
-                  <img src="assets/images/cornell-eng.jpeg" style="box-shadow: 0px 0px 20px rgb(234, 190, 190);" />
-                </div>
-              </div>
-              <div>
-                <div class="heading">
-                  Cornell Engineering
-                </div>
-                <div class="subHeading" style="color: royalblue">
-                  Computer Science and Mathematics Tutor
-                </div>
-                <div class="subHeading" style="color: black">
-                  January 2022 &#8212; May 2022
-                </div>
-                <div class="text">
-                  Tutor and advise students in Object-Oriented Programming (CS 2110) and Multivariable Calculus (MATH
-                  1920) under the Engineering Learning Initiatives Program.
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="body" id="experience-body">
+          <script>
+            // TODO: add Roblox
+
+            // Yoomi
+            addModalPreview(Content.YOOMI);
+            // Cornell Cup Robotics
+            addModalPreview(Content.CUP);
+            // Cornell Bowers CIS
+            addModalPreview(Content.CIS);
+            // Cornell Engineering
+            addModalPreview(Content.CORNELL_ENG);
+          </script>
         </div>
       </div>
     </div>

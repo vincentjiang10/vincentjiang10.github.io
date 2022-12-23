@@ -1,86 +1,14 @@
-// Modal open and close behavior
-
-$(".modalPreview .downArrow").click((e) => {
-  handleDownClick($(e.target).parent(), $(e.target));
-});
-
-$(".modalPreview .upArrow").click((e) => {
-  handleUpClick($(e.target).parent());
-});
-
-const cssObj = {
-  "opacity": "1",
-  "transition": "ease-in 400ms",
-  "transition": "opacity ease-in-out 800ms"
-};
-
-$(".modalPreview").mouseenter((e) => {
-  const obj = $(e.target);
-  if (obj.css("height") === "250px" || obj.parent().css("height") === "250px") {
-    obj.find(".downArrow").css(cssObj);
-    obj.hasClass("downArrow") && obj.css(cssObj);
-  }
-  else {
-    obj.find(".upArrow").css(cssObj);
-    obj.hasClass("upArrow") && obj.css(cssObj);
-  }
-});
-
-$(".modalPreview").mouseleave((e) => {
-  const obj = $(e.target);
-  obj.find(".downArrow").css("opacity", "0");
-  obj.parent().find(".downArrow").css("opacity", "0");
-  obj.find(".upArrow").css("opacity", "0");
-  obj.parent().find(".upArrow").css("opacity", "0");
-});
-
-// Handles down arrow click event on modal
-const handleDownClick = (parentObj, currentObj) => {
-  if (!parentObj.hasClass("modalPreview")) {
-    currentObj = parentObj;
-    parentObj = parentObj.parent();
-  }
-  parentObj.height("auto");
-  let height = parentObj.css("height");
-  parentObj.height("250px");
-  parentObj.height(height);
-  // Hide down arrow
-  parentObj.css("pointer-events", "none");
-  currentObj.css({
-    "opacity": "0",
-    "height": `${parseInt(height) - 250 + 32}px`
-  });
-  setTimeout(() => {
-    currentObj.css("display", "none");
-    parentObj.css("pointer-events", "all");
-  }, 800);
-  // Reveal up arrow
-  setTimeout(() => {
-    parentObj.find(".upArrow").css("opacity", "1");
-  }, 100);
-}
-
-// Handles up arrow click event on modal
-const handleUpClick = (parentObj) => {
-  if (!parentObj.hasClass("modalPreview")) {
-    currentObj = parentObj;
-    parentObj = parentObj.parent();
-  }
-  parentObj.height("250px");
-  // Show down arrow
-  const downArrowObj = parentObj.find(".downArrow");
-  downArrowObj.css({
-    "height": "32px"
-  });
-  console.log(parentObj.offset().top);
-  $("html, body").animate({
-    scrollTop: parentObj.offset().top
-  }, "medium");
-  setTimeout(() => { downArrowObj.css("display", "block") }, 800);
-}
-
 // Create a modal preview
-function createModalPreview() {
+function createModalPreview({
+  imgSrc, 
+  logoStyle, 
+  logoRef,
+  imgStyle,
+  head, 
+  subHead1, 
+  subHead2, 
+  bodyText,
+  more = false}) {
   // Create the outer `div` element
   const modalPreview = document.createElement('div');
   modalPreview.classList.add('modalPreview');
@@ -95,11 +23,11 @@ function createModalPreview() {
   // Create the `logo` and `img` elements
   const logo = document.createElement('div');
   logo.classList.add('logo');
-  logo.style.background = 'radial-gradient(rgb(239, 124, 124), royalblue)';
+  logo.style = logoStyle;
 
   const img = document.createElement('img');
-  img.src = 'assets/images/cup-robotics.jpeg';
-  img.style.boxShadow = '0px 0px 20px rgb(249, 77, 77)';
+  img.src = `assets/images/${imgSrc}`;
+  img.style = imgStyle;
 
   logo.appendChild(img);
   div1.appendChild(logo);
@@ -107,21 +35,21 @@ function createModalPreview() {
   // Create the `heading`, `subHeading`, and `text` elements
   const heading = document.createElement('div');
   heading.classList.add('heading');
-  heading.textContent = 'Cornell Cup Robotics';
+  heading.textContent = head;
 
   const subHeading1 = document.createElement('div');
   subHeading1.classList.add('subHeading');
   subHeading1.style.color = 'royalblue';
-  subHeading1.textContent = 'Software Engineer';
+  subHeading1.textContent = subHead1
 
   const subHeading2 = document.createElement('div');
   subHeading2.classList.add('subHeading');
   subHeading2.style.color = 'black';
-  subHeading2.innerHTML = 'February 2022 &#8212; Present';
+  subHeading2.innerHTML = subHead2
 
   const text = document.createElement('div');
   text.classList.add('text');
-  text.textContent = 'Translate user speech inputs into text using machine learning and natural language processing as part of the CS Chatbot team.';
+  text.textContent = bodyText;
 
   div2.appendChild(heading);
   div2.appendChild(subHeading1);
@@ -136,4 +64,16 @@ function createModalPreview() {
   modalPreview.appendChild(preview);
 
   return modalPreview;
+}
+
+// Add modal preview to parent element with id = [id]
+function addModalPreview({id, ...params}) {
+  // Call the createModalPreview function
+  const modalPreview = createModalPreview(params);
+
+  // Get the element with id of [id]
+  const container = document.getElementById(id);
+
+  // Append the modal preview element to the container element
+  container.appendChild(modalPreview);
 }
