@@ -50,13 +50,12 @@
         </div>
       </a>
     </div>
-
-    <section style="margin-top: 20px;">
-      <div><a href="#about">ABOUT</a></div>
-      <div><a href="#education">EDUCATION</a></div>
-      <div><a href="#experience">EXPERIENCE</a></div>
-      <div><a href="#projects">PROJECTS</a></div>
-      <div><a href="#awards">AWARDS</a></div>
+    <section id="nav-items" style="margin-top: 20px;">
+      <div><a class="about" href="#about">ABOUT</a></div>
+      <div><a class="education" href="#education">EDUCATION</a></div>
+      <div><a class="experience" href="#experience">EXPERIENCE</a></div>
+      <div><a class="projects" href="#projects">PROJECTS</a></div>
+      <div><a class="awards" href="#awards">AWARDS</a></div>
     </section>
     <div>
       <div class="footer">
@@ -72,7 +71,7 @@
 
   <section class="content">
     <!-- About Me section -->
-    <div id="about">
+    <section id="about">
       <div class="contentItem show">
         <div class="header">ABOUT</div>
         <div class="body">
@@ -99,13 +98,13 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <script src="js/modals.js"></script>
     <script src="js/content.js"></script>
 
     <!-- Education section -->
-    <div id="education">
+    <section id="education">
       <div class="contentItem">
         <div class="header">EDUCATION</div>
         <div class="body" id="education-body">
@@ -141,16 +140,16 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Experience section -->
-    <div id="experience">
+    <section id="experience">
       <div class="contentItem">
         <div class="header">EXPERIENCE</div>
         <div class="body" id="experience-body">
           <script>
-            // TODO: add Roblox
-
+            // Roblox
+            addModalPreview(Content.ROBLOX);
             // Yoomi
             addModalPreview(Content.YOOMI);
             // Cornell Cup Robotics
@@ -162,11 +161,10 @@
           </script>
         </div>
       </div>
-    </div>
-    </div>
+    </section>
 
     <!-- Projects section -->
-    <div id="projects">
+    <section id="projects">
       <div class="contentItem">
         <div class="header">PROJECTS</div>
         <div class="body">
@@ -411,10 +409,10 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Awards section -->
-    <div id="awards">
+    <section id="awards">
       <div class="contentItem">
         <div class="header">AWARDS</div>
         <div class="body">
@@ -447,7 +445,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </section>
 </body>
 

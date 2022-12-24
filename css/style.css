@@ -133,6 +133,11 @@ html {
   text-decoration-color: darkblue;
 }
 
+.sidenav a.active {
+  color: darkblue;
+  text-decoration-color: darkblue;
+}
+
 .sidenav .footer {
   color: lightslategrey;
   font-size: 10px;

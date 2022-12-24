@@ -14,26 +14,45 @@ const observer = new IntersectionObserver(entries => {
   threshold: 0.1,
 });
 
-// set observer to observe each contentItem header
+// Set observer to observe each contentItem header
 contentItemHeaders.forEach(contentItemHeader => {
   observer.observe(contentItemHeader);
 });
 
-// set observer to obserce each contentItem bodyText
+// Set observer to obserce each contentItem bodyText
 contentItemBodyTexts.forEach(contentItemBodyText => {
   observer.observe(contentItemBodyText);
 })
 
-// set observer to observe each modalPreview
+// Set observer to observe each modalPreview
 modalPreviews.forEach(modalPreview => {
   observer.observe(modalPreview);
 });
 
-// when the DOM has fully loaded
+// Highlight navbar items on scroll
+$(window).scroll(function() {
+  let currentId = "";
+  $('.content section').each(function() {
+    const sectionTop = $(this).offset().top;
+    const sectionHeight = $(this).outerHeight();
+    if ($(window).scrollTop() >= sectionTop - (sectionHeight / 3)) {
+      currentId = $(this).attr('id');
+    }
+  });
+
+  $('#nav-items a').each(function() {
+    $(this).removeClass('active');
+    if ($(this).hasClass(currentId)) {
+      $(this).addClass('active');
+    }
+  });
+});
+
+// When the DOM has fully loaded
 $(document).ready(() => {
   //-- Remove anchor link in URL when clicked --
   const anchor = $(".sidenav div");
-  // when clicked
+  // When clicked
   anchor.click(() => {
     setTimeout(() => { removeHash(); }, 0);
   });

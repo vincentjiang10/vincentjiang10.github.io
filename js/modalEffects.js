@@ -74,7 +74,6 @@ const handleUpClick = (parentObj) => {
   downArrowObj.css({
     "height": "32px"
   });
-  console.log(parentObj.offset().top);
   $("html, body").animate({
     scrollTop: parentObj.offset().top
   }, "medium");

@@ -1,4 +1,14 @@
 const Content = {
+  ROBLOX: {
+    id: "experience-body",
+    imgSrc: "roblox.png",
+    logoStyle: "background: radial-gradient(rgb(192,192,192), royalblue)",
+    imgStyle: "box-shadow: 0px 0px 20px rgb(200, 200, 200);",
+    head: "Roblox",
+    subHead1: "Software Engineer Intern",
+    subHead2: "Summer 2023",
+    bodyText: "Coming Soon!"
+  },
   YOOMI: {
     id: "experience-body",
     imgSrc: "yoomi.png",
