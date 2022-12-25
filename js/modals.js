@@ -2,7 +2,7 @@
 function createModalPreview({
   imgSrc, 
   logoStyle, 
-  logoRef, // Add class="logoRef"
+  logoRef, // Add class="logoRef" // Add element <a> if defined
   imgStyle,
   head, 
   subHead1, 
@@ -13,13 +13,13 @@ function createModalPreview({
   const modalPreview = document.createElement('div');
   modalPreview.classList.add('modalPreview');
 
-  // Create the inner `div` elements
-  const preview = document.createElement('div');
-  preview.classList.add('preview');
-
   // Default element has opaque child element
   const overlay = document.createElement('div');
   overlay.classList.add('overlay')
+
+  // Create the inner `div` elements
+  const preview = document.createElement('div');
+  preview.classList.add('preview');
 
   const div1 = document.createElement('div');
   const div2 = document.createElement('div');
@@ -60,27 +60,34 @@ function createModalPreview({
   div2.appendChild(subHeading2);
   div2.appendChild(text);
 
-  // Append all elements to the `preview` element
-  preview.appendChild(overlay);
+  // Append `div1` and `div2` elements to the `preview` element
   preview.appendChild(div1);
   preview.appendChild(div2);
 
-  // Append the `preview` element to the `modalPreview` element
+  //-- Arrow elements --
+  // Create the down arrow element
+  const downArrow = document.createElement('div');
+  downArrow.className = 'downArrow';
+  const downArrowIcon = document.createElement('i');
+  downArrowIcon.className = 'fa fa-chevron-down';
+  downArrowIcon.setAttribute('aria-hidden', 'true');
+  downArrow.appendChild(downArrowIcon);
+
+  // Create the up arrow element
+  const upArrow = document.createElement('div');
+  upArrow.className = 'upArrow';
+  const upArrowIcon = document.createElement('i');
+  upArrowIcon.className = 'fa fa-chevron-up';
+  upArrowIcon.setAttribute('aria-hidden', 'true');
+  upArrow.appendChild(upArrowIcon);
+
+  // Append elements to the `modalPreview` element
+  modalPreview.appendChild(overlay);
   modalPreview.appendChild(preview);
-
-  return modalPreview;
-}
-
-// TODO: Add arrows to modal if it currently has none (Will be used by addModalPreview if {initialArrows} = params
-// May be called on by resize event
-function addArrows(id) {
+  modalPreview.appendChild(downArrow);
+  modalPreview.appendChild(upArrow);
   
-}
-
-// Remove arrows to modal if it currently has arrows
-// May be called on by resize event
-function removeArrows(id) {
-
+  return modalPreview;
 }
 
 // Add modal preview to parent element with id = [id]

@@ -15,13 +15,18 @@
   <script src="js/scrollEffects.js" defer></script>
   <script src="js/resize.js" defer></script>
   <script src="js/modalEffects.js" defer></script>
+  <script src="js/theme.js" defer></script>
 </head>
 
 <body style="background-color: aliceblue; color: black;">
   <!-- Background theme animation -->
-  <section class="theme glow"></section>
-  <section class="theme background"></section>
-  <section class="theme"></section>
+  <!-- TODO: Add drag effect (move background) + change direction depending on drag + add acceleration -->
+  <!-- TODO: (advanced) Add hover effect with color + when clicked will dynamically change theme background -->
+  <!-- TODO: Add light bounce off of navbar when near theme background (determine based on scrollY) -->
+  <section class="theme">
+    <div class="themeAnimation background"></div>
+    <div class="themeAnimation"></div>
+  </section>
 
   <!-- Sidebar nav -->
   <section class="sidenav">
@@ -139,6 +144,12 @@
                 </div>
               </div>
             </div>
+            <div class="downArrow">
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </div>
+            <div class="upArrow">
+              <i class="fa fa-chevron-up" aria-hidden="true"></i>
+            </div>
           </div>
         </div>
       </div>
@@ -169,7 +180,7 @@
     <section id="projects">
       <div class="contentItem">
         <div class="header">PROJECTS</div>
-        <div class="body">
+        <div class="body" id="project-body">
           <!-- TODO: Abstract away into addModalPreview() -->
           <!-- TODO: Add Pac-camel project -->
           <!-- Towers of Hanoi project -->

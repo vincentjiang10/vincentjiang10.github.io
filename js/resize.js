@@ -1,7 +1,7 @@
 //-- Collapse sidebar if viewport height is less than 1000px --
 
 $(window).on("load resize", () => {
-  const viewportWidth = $(window).width();
+  let viewportWidth = $(window).width();
   // Minimum width
   if (viewportWidth < 450) viewportWidth = 450;
   const isCollapse = viewportWidth < 1000;
@@ -45,7 +45,7 @@ function modalPreviewLogic(viewportWidth) {
     // else {
 
     // }
-    
+
     // Change back to default height 
     height <= 250 && mp.height(height);
   })

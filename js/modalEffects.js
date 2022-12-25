@@ -16,10 +16,20 @@ const cssObj = {
   "transition": "opacity ease-in-out 800ms",
 };
 
+// Add 30 to 250 (default modal size) due to up arrow
+const MODAL_HEIGHT = 280;
+
 // Mouse enter modal logic
 $(".modalPreview").mouseenter(function() {
   const mp = $(this);
-  mp.height() === 250 ? mp.find(".downArrow").css(cssObj) : mp.find(".upArrow").css(cssObj);
+  const height = mp.height();
+  mp.height("auto");
+  const autoHeight = mp.height();
+  // Set back to original
+  mp.height(height);
+  height <= MODAL_HEIGHT ? 
+    autoHeight > MODAL_HEIGHT && mp.find(".downArrow").css(cssObj) : 
+    mp.find(".upArrow").css(cssObj);
 });
 
 // Mouse leave modal logic

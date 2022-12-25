@@ -53,5 +53,8 @@ const Content = {
     subHead2: "January 2022 &#8212; May 2022",
     bodyText: "Tutor and advise students in Object-Oriented Programming (CS 2110) and \
                Multivariable Calculus (MATH 1920) under the Engineering Learning Initiatives Program."
+  },
+  CHOICE_GAME: {
+    id: "project-body"
   }
 }

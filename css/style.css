@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
-.theme {
+.themeAnimation {
   position: absolute;
   top: 0;
   left: 0;
@@ -11,24 +11,12 @@ html {
   overflow: hidden;
   background-image: url("../assets/images/theme-pic.png");
   background-size: 45%;
-  animation: translate 100s linear infinite;
 }
 
-.theme.background {
+.themeAnimation.background {
   top: 10px;
   filter: blur(25px) brightness(150%) saturate(150%) hue-rotate(-30deg);
 }
-
-@keyframes translate {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 5000px 0;
-  }
-}
-
 
 /* The sidebar menu */
 .sidenav {
@@ -232,7 +220,7 @@ html {
 
 .modalPreview .downArrow {
   width: 100%;
-  height: 32px;
+  height: 30px;
   color: darkblue;
   opacity: 0;
   position: absolute;
@@ -245,7 +233,7 @@ html {
 
 .modalPreview .upArrow {
   width: 100%;
-  height: 32px;
+  height: 30px;
   color: darkblue;
   position: relative;
   bottom: 0px;
