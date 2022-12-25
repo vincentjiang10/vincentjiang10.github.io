@@ -66,6 +66,17 @@ function createModalPreview({
   return modalPreview;
 }
 
+// TODO: Add arrows to modal (Will be used by addModalPreview if {initialArrows} = params
+// May be called on 
+function addArrows(id) {
+  
+}
+
+// Remove arrows
+function removeArrows(id) {
+
+}
+
 // Add modal preview to parent element with id = [id]
 function addModalPreview({id, ...params}) {
   // Call the createModalPreview function

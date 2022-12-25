@@ -6,7 +6,7 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: max(100vw, 450px);
   height: 27vw;
   overflow: hidden;
   background-image: url("../assets/images/theme-pic.png");
