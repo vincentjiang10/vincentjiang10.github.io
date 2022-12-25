@@ -17,6 +17,10 @@ function createModalPreview({
   const preview = document.createElement('div');
   preview.classList.add('preview');
 
+  // Default element has opaque child element
+  const opaqueEffect = document.createElement('div');
+  opaqueEffect.classList.add('opaqueEffect')
+
   const div1 = document.createElement('div');
   const div2 = document.createElement('div');
 
@@ -57,6 +61,7 @@ function createModalPreview({
   div2.appendChild(text);
 
   // Append all elements to the `preview` element
+  preview.appendChild(opaqueEffect);
   preview.appendChild(div1);
   preview.appendChild(div2);
 
@@ -66,13 +71,14 @@ function createModalPreview({
   return modalPreview;
 }
 
-// TODO: Add arrows to modal (Will be used by addModalPreview if {initialArrows} = params
-// May be called on 
+// TODO: Add arrows to modal if it currently has none (Will be used by addModalPreview if {initialArrows} = params
+// May be called on by resize event
 function addArrows(id) {
   
 }
 
-// Remove arrows
+// Remove arrows to modal if it currently has arrows
+// May be called on by resize event
 function removeArrows(id) {
 
 }

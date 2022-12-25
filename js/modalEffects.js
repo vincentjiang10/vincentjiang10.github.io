@@ -56,7 +56,7 @@ const handleDownClick = (parentObj, currentObj) => {
     currentObj.css("display", "none");
     parentObj.css("pointer-events", "all");
   }, 800);
-  // Reveal up arrow
+  // TODO: Remove opaque element
   setTimeout(() => {
     parentObj.find(".upArrow").css("opacity", "1");
   }, 100);
@@ -74,6 +74,7 @@ const handleUpClick = (parentObj) => {
   downArrowObj.css({
     "height": "32px"
   });
+  // TODO: Add opaque element
   $("html, body").animate({
     scrollTop: parentObj.offset().top
   }, "medium");

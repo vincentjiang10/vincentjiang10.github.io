@@ -268,6 +268,16 @@ html {
   box-shadow: 2px 8px 25px rgb(183, 209, 242);
 }
 
+.modalPreview .opaqueEffect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 75%, rgb(228, 239, 248));
+  z-index: 1000;
+}
+
 /* Include logo picture (left) and description (right) */
 .modalPreview .preview {
   pointer-events: none;
@@ -331,17 +341,16 @@ html {
   transform: translateY(-5px);
   color: royalblue;
 }
-
+ 
 .modalPreview .preview .text {
   padding-top: 20px;
-  height: 200px;
   padding-right: 30px;
   font-family: "Exo", serif;
 }
 
 .modalPreview .rest {
   font-family: "Exo", serif;
-  margin-top: -70px;
+  margin-top: 50px;
   margin-left: 5%;
   width: 90%;
 }

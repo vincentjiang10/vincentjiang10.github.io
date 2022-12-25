@@ -1,7 +1,7 @@
 //-- Collapse sidebar if viewport height is less than 1000px --
 
 $(window).on("load resize", () => {
-  let viewportWidth = $(window).width();
+  const viewportWidth = $(window).width();
   // Minimum width
   if (viewportWidth < 450) viewportWidth = 450;
   const isCollapse = viewportWidth < 1000;
@@ -13,18 +13,39 @@ $(window).on("load resize", () => {
     "width": `${viewportWidth - 400 + (isCollapse ? 250 : 0)}px`,
     "left": `${viewportWidth / 2 - Math.min(1250, viewportWidth - 100) / 2 + (isCollapse ? 0 : 300)}px`
   })
-  // Auto height if it is not 250px after resize event
+
+  // Check side effects on modals
+  modalPreviewLogic(viewportWidth);
+})
+
+// Side effects to modals upon event resize
+function modalPreviewLogic(viewportWidth) {
   const modalPreviews = document.querySelectorAll(".modalPreview");
   modalPreviews.forEach(modalPreview => {
     const mp = $(modalPreview);
-    const height = parseInt(mp.css("height"));
+    const height = parseInt(mp.height());
     console.log("height: " + height);
-    console.log("height > 250px: " + (height > "250px"));
-    if (height > 250) {
-      mp.height("auto");
-    } else {
+    // Find auto height
+    mp.height("auto");
+    const autoHeight = parseInt(mp.height());
+    console.log("auto height: " + autoHeight);
+
+    if (autoHeight <= 250) {
+      // Remove arrows, if any
+    }
+    else {
+      // Add arrows, if none
+    }
+
+    if (height <= 250) {
+      // Change back to default height 
+      mp.height(height);
+      
+    }
+    else {
 
     }
+    
   })
   console.log(viewportWidth);
-})
+}
