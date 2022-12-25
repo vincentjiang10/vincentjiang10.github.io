@@ -13,27 +13,20 @@ $(".modalPreview .upArrow").click((e) => {
 const cssObj = {
   "opacity": "1",
   "transition": "ease-in 400ms",
-  "transition": "opacity ease-in-out 800ms"
+  "transition": "opacity ease-in-out 800ms",
 };
 
-$(".modalPreview").mouseenter((e) => {
-  const obj = $(e.target);
-  if (obj.css("height") === "250px" || obj.parent().css("height") === "250px") {
-    obj.find(".downArrow").css(cssObj);
-    obj.hasClass("downArrow") && obj.css(cssObj);
-  }
-  else {
-    obj.find(".upArrow").css(cssObj);
-    obj.hasClass("upArrow") && obj.css(cssObj);
-  }
+// Mouse enter modal logic
+$(".modalPreview").mouseenter(function() {
+  const mp = $(this);
+  mp.height() === 250 ? mp.find(".downArrow").css(cssObj) : mp.find(".upArrow").css(cssObj);
 });
 
-$(".modalPreview").mouseleave((e) => {
-  const obj = $(e.target);
-  obj.find(".downArrow").css("opacity", "0");
-  obj.parent().find(".downArrow").css("opacity", "0");
-  obj.find(".upArrow").css("opacity", "0");
-  obj.parent().find(".upArrow").css("opacity", "0");
+// Mouse leave modal logic
+$(".modalPreview").mouseleave(function() {
+  const mp = $(this);
+  mp.find(".downArrow").css("opacity", "0");
+  mp.find(".upArrow").css("opacity", "0");
 });
 
 // Handles down arrow click event on modal
@@ -56,7 +49,8 @@ const handleDownClick = (parentObj, currentObj) => {
     currentObj.css("display", "none");
     parentObj.css("pointer-events", "all");
   }, 800);
-  // TODO: Remove opaque element
+  // Turn overlay inactive
+  parentObj.find(".overlay").addClass("inactive");
   setTimeout(() => {
     parentObj.find(".upArrow").css("opacity", "1");
   }, 100);
@@ -74,7 +68,8 @@ const handleUpClick = (parentObj) => {
   downArrowObj.css({
     "height": "32px"
   });
-  // TODO: Add opaque element
+  // Turn overlay active
+  parentObj.find(".overlay").removeClass("inactive");
   $("html, body").animate({
     scrollTop: parentObj.offset().top
   }, "medium");

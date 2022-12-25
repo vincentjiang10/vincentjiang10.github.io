@@ -2,7 +2,7 @@
 function createModalPreview({
   imgSrc, 
   logoStyle, 
-  logoRef,
+  logoRef, // Add class="logoRef"
   imgStyle,
   head, 
   subHead1, 
@@ -18,8 +18,8 @@ function createModalPreview({
   preview.classList.add('preview');
 
   // Default element has opaque child element
-  const opaqueEffect = document.createElement('div');
-  opaqueEffect.classList.add('opaqueEffect')
+  const overlay = document.createElement('div');
+  overlay.classList.add('overlay')
 
   const div1 = document.createElement('div');
   const div2 = document.createElement('div');
@@ -61,7 +61,7 @@ function createModalPreview({
   div2.appendChild(text);
 
   // Append all elements to the `preview` element
-  preview.appendChild(opaqueEffect);
+  preview.appendChild(overlay);
   preview.appendChild(div1);
   preview.appendChild(div2);
 

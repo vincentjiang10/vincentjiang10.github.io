@@ -240,6 +240,7 @@ html {
   text-align: center;
   background-image: linear-gradient(to bottom, rgb(228, 239, 248), rgb(183, 209, 242));
   animation: bobUpAndDown 1s linear infinite;
+  z-index: 3;
 }
 
 .modalPreview .upArrow {
@@ -251,6 +252,7 @@ html {
   text-align: center;
   background-image: linear-gradient(to bottom, rgb(228, 239, 248), rgb(183, 209, 242));
   animation: bobUpAndDown 1s linear infinite;
+  z-index: 3;
 }
 
 @keyframes bobUpAndDown {
@@ -268,20 +270,29 @@ html {
   box-shadow: 2px 8px 25px rgb(183, 209, 242);
 }
 
-.modalPreview .opaqueEffect {
+.modalPreview .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, rgba(0,0,0,0) 75%, rgb(228, 239, 248));
-  z-index: 1000;
+  z-index: 2;
+  display: block;
+}
+
+.modalPreview .overlay.inactive {
+  display: none;
 }
 
 /* Include logo picture (left) and description (right) */
 .modalPreview .preview {
   pointer-events: none;
   display: flex;
+}
+
+.modalPreview .preview .logoRef {
+  z-index: 4;
 }
 
 .modalPreview .preview .logo {
@@ -291,6 +302,7 @@ html {
   height: 180px;
   border-radius: 40px;
   border: thin darkblue 5px;
+  z-index: 4;
 }
 
 .modalPreview .preview .logo img {
@@ -327,6 +339,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 4;
 }
 
 .modalPreview .preview .button {

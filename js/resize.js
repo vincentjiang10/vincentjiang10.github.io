@@ -37,15 +37,17 @@ function modalPreviewLogic(viewportWidth) {
       // Add arrows, if none
     }
 
-    if (height <= 250) {
-      // Change back to default height 
-      mp.height(height);
+    // if (height <= 250) {
+    //   // Change back to default height 
+    //   mp.height(height);
       
-    }
-    else {
+    // }
+    // else {
 
-    }
+    // }
     
+    // Change back to default height 
+    height <= 250 && mp.height(height);
   })
   console.log(viewportWidth);
 }
