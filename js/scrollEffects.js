@@ -34,8 +34,7 @@ $(window).scroll(function() {
   let currentId = "";
   $('.content section').each(function() {
     const sectionTop = $(this).offset().top;
-    const sectionHeight = $(this).outerHeight();
-    if ($(window).scrollTop() >= sectionTop - (sectionHeight / 3)) {
+    if ($(window).scrollTop() >= sectionTop - 300) {
       currentId = $(this).attr('id');
     }
   });

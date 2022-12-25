@@ -8,12 +8,15 @@ html {
   left: 0;
   width: 100vw;
   height: 27vw;
-  border: thin solid aqua;
-  box-shadow: 2px 2px 50px aquamarine;
   overflow: hidden;
-  background-image: url("../assets/images/themePic.png");
+  background-image: url("../assets/images/theme-pic.png");
   background-size: 45%;
   animation: translate 100s linear infinite;
+}
+
+.theme.background {
+  top: 10px;
+  filter: blur(25px) brightness(150%) saturate(150%) hue-rotate(-30deg);
 }
 
 @keyframes translate {
@@ -26,6 +29,7 @@ html {
   }
 }
 
+
 /* The sidebar menu */
 .sidenav {
   height: 100vh;
@@ -33,7 +37,7 @@ html {
   position: fixed;
   top: 0px;
   left: calc(50vw - min(1250px, calc(100vw - 100px))/2);
-  z-index: 1;
+  z-index: 10;
   background-color: rgb(228, 239, 248);
   padding: 100px 10px;
   display: inline-block;
@@ -155,7 +159,7 @@ html {
   position: absolute;
   max-width: 950px;
   width: calc(100vw - 400px);
-  top: 25vw;
+  top: 30vw;
   left: calc(50vw - min(1250px, calc(100vw - 100px))/2 + 300px);
 }
 
