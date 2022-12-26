@@ -15,7 +15,7 @@ html {
 
 .themeAnimation.background {
   top: 10px;
-  filter: blur(25px) brightness(150%) saturate(150%) hue-rotate(-30deg);
+  filter: blur(30px) brightness(150%) saturate(150%) hue-rotate(-30deg);
 }
 
 /* The sidebar menu */
