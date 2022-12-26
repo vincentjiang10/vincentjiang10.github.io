@@ -55,6 +55,16 @@ const Content = {
                Multivariable Calculus (MATH 1920) under the Engineering Learning Initiatives Program."
   },
   CHOICE_GAME: {
-    id: "project-body"
+    id: "project-body",
+    imgSrc: "choice-game.jpeg",
+    logoStyle: "background: radial-gradient(lightseagreen, royalblue)",
+    logoRef: "https://github.com/vjiang10/choice-game",
+    imgStyle: "box-shadow: 0px 0px 20px rgb(99, 236, 209)",
+    head: "Choice Game",
+    subHead1: "C, ImageMagick",
+    subHead2: "January 2021 &#8212; February 2021",
+    buttons: [{href: "https://github.com/vjiang10/choice-game", icon: "fa fa-github-square"}],
+    bodyText: "A choice-based game run on the terminal that relies on user command line inputs. \
+               A horror-themed story plays out with the aid of pictures depending on the user's decisions."
   }
 }

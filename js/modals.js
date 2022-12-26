@@ -7,8 +7,8 @@ function createModalPreview({
   head, 
   subHead1, 
   subHead2, 
-  bodyText,
-  more = false}) {
+  buttons,
+  bodyText}) {
   // Create the outer `div` element
   const modalPreview = document.createElement('div');
   modalPreview.classList.add('modalPreview');
@@ -65,6 +65,7 @@ function createModalPreview({
   preview.appendChild(div2);
 
   //-- Arrow elements --
+  // TODO: fix arrow error (relative position -> Modal height should be 250px)
   // Create the down arrow element
   const downArrow = document.createElement('div');
   downArrow.className = 'downArrow';
