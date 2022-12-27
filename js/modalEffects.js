@@ -24,6 +24,9 @@ $('.modalPreview').mouseenter(function() {
   // Set back to original
   mp.height(height);
   if (autoHeight > height + thres || mp.find('.arrow').hasClass('up')) mp.find('.arrow').css(cssObj);
+  else {
+    mp.find('.arrow').css({'pointer-events': 'none'})
+  }
 });
 
 // Mouse leave modal logic

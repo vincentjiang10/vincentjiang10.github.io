@@ -25,6 +25,7 @@ function addModalPreview({
   const div1 = document.createElement('div');
   div1.classList.add('logoRef');
   const div2 = document.createElement('div');
+  div2.classList.add('previewText');
 
   // Create the `logo` and `img` elements
   const logo = document.createElement('div');

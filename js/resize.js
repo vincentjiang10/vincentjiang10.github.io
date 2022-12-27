@@ -20,9 +20,10 @@ $(window).on("load resize", () => {
 
 // Side effects to modals upon event resize
 function modalPreviewLogic(viewportWidth) {
-  const modalPreviews = document.querySelectorAll(".modalPreview");
-  modalPreviews.forEach(modalPreview => {
-    const mp = $(modalPreview);
+  const modalPreviews = $(".modalPreview");
+  modalPreviews.each(function() {
+    // Get modal height info
+    const mp = $(this);
     const height = parseInt(mp.height());
     const thres = 10;
     console.log("height: " + height);
@@ -41,17 +42,19 @@ function modalPreviewLogic(viewportWidth) {
       mp.find('.overlay').removeClass('active');
     }
 
-    // if (height <= 250) {
-    //   // Change back to default height 
-    //   mp.height(height);
-      
-    // }
-    // else {
-
-    // }
+    const preview = mp.find('.preview');
+    // Toggle `collapse`
+    if (viewportWidth <= 750) {
+      preview.addClass('collapse')
+      preview.find("*").addClass('collapse');
+    }
+    else {
+      preview.removeClass('collapse')
+      preview.find("*").removeClass('collapse');
+    }
 
     // Change back to default height 
     height <= 250 && mp.height(height);
-  })
+  });
   console.log(viewportWidth);
 }
