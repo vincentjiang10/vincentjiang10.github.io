@@ -19,8 +19,8 @@ const Content = {
     subHead1: "Software Engineer Intern",
     subHead2: "August 2022 &#8212; Present",
     bodyText: "Refactor and develop code in TypeScript responsible for motion-tracking behavior, \
-               data collection, and animations on HTML5 Canvas to provide an interactive, gamified \
-               experience for in-patients in physical therapy during exercises."
+               data collection, and animations on HTML5 Canvas to provide an interactive \
+               exercising experience for in-patients in physical therapy."
   },
 
   CUP: {
@@ -62,15 +62,15 @@ const Content = {
   PAC_CAMEL: {
     id: "pac-camel",
     imgSrc: "pac-camel.png",
-    logoStyle: "background: radial-gradient(rgb(192,192,192), royalblue)",
+    logoStyle: "background: radial-gradient(rgb(241, 234, 132), royalblue)",
     logoRef: "https://github.com/vjiang10/pac-camel",
-    imgStyle: "box-shadow: 0px 0px 20px rgb(200, 200, 200)",
+    imgStyle: "box-shadow: 0px 0px 20px rgb(235, 180, 76)",
     head: "Pac-Camel",
     subHead1: "OCaml, Bogue, SDL",
     subHead2: "October 2022 &#8212; December 2022",
-    buttons: [{href: "https://github.com/vjiang10/pac-camel", icon: "fa fa-github-square"}],
-    bodyText: "Camel version of Pac-Man. Features include random map generation, level difficulty,\
-               controls and movements, power-ups and items."
+    buttons: [{href: "https://github.com/vjiang10/pac-camel", icon: "fa-github-square"}],
+    bodyText: "Camel version of Pac-Man. Features include random map generation, controls and movements, \
+               power-ups and items."
   },
 
   TOWERS_OF_HANOI: {
@@ -82,9 +82,9 @@ const Content = {
     head: "Towers of Hanoi",
     subHead1: "JavaScript, HTML, CSS, React.js, Three.js, Firebase",
     subHead2: "July 2022 &#8212; August 2022",
-    buttons: [{href: "https://towers-of-hanoi-4d72b.web.app/", icon: "fa fa-external-link-square"}, 
-              {href: "https://github.com/vjiang10/towers-of-hanoi", icon: "fa fa-github-square"}],
-    bodyText: "Web app and game based on the Towers of Hanoi math puzzle.\
+    buttons: [{href: "https://towers-of-hanoi-4d72b.web.app/", icon: "fa-external-link-square"}, 
+              {href: "https://github.com/vjiang10/towers-of-hanoi", icon: "fa-github-square"}],
+    bodyText: "Web app and game based on the Towers of Hanoi math puzzle. \
                The app contains three different puzzle types: Standard, Bicolor, and Adjacent."
   },
 
@@ -97,8 +97,8 @@ const Content = {
     head: "Terrain Map",
     subHead1: "Java, Swing, AWT",
     subHead2: "June 2022 &#8212; July 2022",
-    buttons: [{href: "https://github.com/vjiang10/terrain-map", icon: "fa fa-github-square"}],
-    bodyText: "3D visualization tool for popular stochastic algorithms for fractal landscape generation\
+    buttons: [{href: "https://github.com/vjiang10/terrain-map", icon: "fa-github-square"}],
+    bodyText: "3D visualization tool for popular stochastic algorithms for fractal landscape generation \
                that model Brownian motion, including Midpoint Displacement, Diamond Square, and Perlin Noise."
   },
 
@@ -111,7 +111,7 @@ const Content = {
     head: "Choice Game",
     subHead1: "C, ImageMagick",
     subHead2: "January 2021 &#8212; February 2021",
-    buttons: [{href: "https://github.com/vjiang10/choice-game", icon: "fa fa-github-square"}],
+    buttons: [{href: "https://github.com/vjiang10/choice-game", icon: "fa-github-square"}],
     bodyText: "A choice-based game run on the terminal that relies on user command line inputs. \
                A horror-themed story plays out with the aid of pictures depending on the user's decisions."
   }

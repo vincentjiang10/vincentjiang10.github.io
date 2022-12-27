@@ -18,11 +18,12 @@ const cssObj = {
 $('.modalPreview').mouseenter(function() {
   const mp = $(this);
   const height = mp.height();
+  const thres = 10;
   mp.height('auto');
   const autoHeight = mp.height();
   // Set back to original
   mp.height(height);
-  if (autoHeight > height || mp.find('.arrow').hasClass('up')) mp.find('.arrow').css(cssObj);
+  if (autoHeight > height + thres || mp.find('.arrow').hasClass('up')) mp.find('.arrow').css(cssObj);
 });
 
 // Mouse leave modal logic

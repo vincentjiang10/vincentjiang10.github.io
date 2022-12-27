@@ -24,6 +24,7 @@ function modalPreviewLogic(viewportWidth) {
   modalPreviews.forEach(modalPreview => {
     const mp = $(modalPreview);
     const height = parseInt(mp.height());
+    const thres = 10;
     console.log("height: " + height);
     // Find auto height
     mp.height("auto");
@@ -31,7 +32,7 @@ function modalPreviewLogic(viewportWidth) {
     console.log("auto height: " + autoHeight);
 
     // Toggle overlay
-    if (autoHeight > height) {
+    if (autoHeight > height + thres) {
       // Add overlay
       mp.find('.overlay').addClass('active');
     }

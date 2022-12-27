@@ -202,45 +202,35 @@
       <div class="contentItem">
         <div class="header">PROJECTS</div>
         <div class="body" id="project-body">
-          <!-- TODO: Abstract away into addModalPreview() -->
           <!-- TODO: Add Pac-camel project -->
-          <!-- Towers of Hanoi project -->
-          <div class="modalPreview">
-            <div class="overlay"></div>
-            <div class="preview">
-              <div class="logoRef">
-                <a href="https://towers-of-hanoi-4d72b.web.app/" target="_blank">
-                  <div class="logo" style="background: radial-gradient(rgb(163, 255, 247), royalblue)">
-                    <img src="assets/images/towers-of-hanoi.png" style="box-shadow: 0px 0px 20px rgb(163, 255, 247)" />
-                  </div>
-                </a>
+          <div class="modalPreview" id="pac-camel">
+            <script>
+              addModalPreview(Content.PAC_CAMEL);
+            </script>
+            <!-- modal body content -->
+            <div class="rest">
+              <div class="heading">
+                DEMO
               </div>
-              <div>
-                <div class="heading">
-                  Towers of Hanoi
-                </div>
-                <div class="subHeading" style="color: royalblue">
-                  JavaScript, HTML, CSS, React.js, Three.js, Firebase
-                </div>
-                <div class="subHeading" style="color: black">
-                  July 2022 &#8212; August 2022
-                </div>
-                <div class="buttons">
-                  <!-- Link -->
-                  <a class="button" href="https://towers-of-hanoi-4d72b.web.app/" target="_blank">
-                    <i class="fa fa-external-link-square" aria-hidden="true"></i>
-                  </a>
-                  <!-- Github -->
-                  <a class="button" href="https://github.com/vjiang10/towers-of-hanoi" target="_blank">
-                    <i class="fa fa-github-square" aria-hidden="true"></i>
-                  </a>
-                </div>
-                <div class="text">
-                  Web app and game based on the Towers of Hanoi math puzzle.
-                  The app contains three different puzzle types: Standard, Bicolor, and Adjacent.
-                </div>
+              <div class="section">
+                GAME
               </div>
+              <video class="video" controls>
+                <source src="assets/videos/pac-camel-game.mp4" type="video/mp4">
+              </video>
+              <div class="section">
+                MAP GENERATION
+              </div>
+              <video class="video" controls>
+                <source src="assets/videos/pac-man-map.mp4" type="video/mp4">
+              </video>
             </div>
+          </div>
+          <!-- Towers of Hanoi project -->
+          <div class="modalPreview" id="towers-of-hanoi">
+            <script>
+              addModalPreview(Content.TOWERS_OF_HANOI)
+            </script>
             <!-- modal body content -->
             <div class="rest">
               <div class="heading">
@@ -265,43 +255,12 @@
                 <source src="assets/videos/adjacent-animation.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow">
-              <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </div>
           </div>
           <!-- Terrain Map project -->
-          <div class="modalPreview">
-            <div class="overlay"></div>
-            <div class="preview">
-              <div class="logoRef">
-                <a href="https://github.com/vjiang10/terrain-map" target="_blank">
-                  <div class="logo" style="background: radial-gradient(aliceblue, royalblue)">
-                    <img src="assets/images/terrain-map.png" style="box-shadow: 0px 0px 20px rgb(5, 243, 76)" />
-                  </div>
-                </a>
-              </div>
-              <div>
-                <div class="heading">
-                  Terrain Map
-                </div>
-                <div class="subHeading" style="color: royalblue">
-                  Java, Swing, AWT
-                </div>
-                <div class="subHeading" style="color: black">
-                  June 2022 &#8212; July 2022
-                </div>
-                <div class="buttons">
-                  <!-- Github -->
-                  <a class="button" href="https://github.com/vjiang10/terrain-map" target="_blank">
-                    <i class="fa fa-github-square" aria-hidden="true"></i>
-                  </a>
-                </div>
-                <div class="text">
-                  3D visualization tool for popular stochastic algorithms for fractal landscape generation that model
-                  Brownian motion, including Midpoint Displacement, Diamond Square, and Perlin Noise.
-                </div>
-              </div>
-            </div>
+          <div class="modalPreview" id="terrain-map">
+            <script>
+              addModalPreview(Content.TERRAIN_MAP)
+            </script>
             <!-- modal body content -->
             <div class="rest">
               <div class="heading">
@@ -362,43 +321,12 @@
                 <source src="assets/videos/light.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow">
-              <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </div>
           </div>
           <!-- Choice Game project -->
-          <div class="modalPreview">
-            <div class="overlay"></div>
-            <div class="preview">
-              <div class="logoRef">
-                <a href="https://github.com/vjiang10/choice-game" target="_blank">
-                  <div class="logo" style="background: radial-gradient(lightseagreen, royalblue)">
-                    <img src="assets/images/choice-game.jpeg" style="box-shadow: 0px 0px 20px rgb(99, 236, 209)" />
-                  </div>
-                </a>
-              </div>
-              <div>
-                <div class="heading">
-                  Choice Game
-                </div>
-                <div class="subHeading" style="color: royalblue">
-                  C, ImageMagick
-                </div>
-                <div class="subHeading" style="color: black">
-                  January 2021 &#8212; February 2021
-                </div>
-                <div class="buttons">
-                  <!-- Github -->
-                  <a class="button" href="https://github.com/vjiang10/choice-game" target="_blank">
-                    <i class="fa fa-github-square" aria-hidden="true"></i>
-                  </a>
-                </div>
-                <div class="text">
-                  A choice-based game run on the terminal that relies on user command line inputs.
-                  A horror-themed story plays out with the aid of pictures depending on the user's decisions.
-                </div>
-              </div>
-            </div>
+          <div class="modalPreview" id="choice-game">
+            <script>
+              addModalPreview(Content.CHOICE_GAME)
+            </script>
             <div class="rest">
               <div class="heading">
                 DEMO
@@ -406,9 +334,6 @@
               <video class="video" controls>
                 <source src="assets/videos/choice-game.mp4" type="video/mp4">
               </video>
-            </div>
-            <div class="arrow">
-              <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </div>
           </div>
         </div>
