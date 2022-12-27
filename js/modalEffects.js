@@ -2,86 +2,85 @@
  * Modal open and close behavior
  * */ 
 
-$(".modalPreview .downArrow").click((e) => {
-  handleDownClick($(e.target).parent(), $(e.target));
-});
-
-$(".modalPreview .upArrow").click((e) => {
-  handleUpClick($(e.target).parent());
+$('.modalPreview .arrow').click(function () {
+  $(this).hasClass('up') ? 
+    handleUpClick($(this).parent(), $(this)) :
+    handleDownClick($(this).parent(), $(this));
 });
 
 const cssObj = {
-  "opacity": "1",
-  "transition": "ease-in 400ms",
-  "transition": "opacity ease-in-out 800ms",
+  'opacity': '1',
+  'pointer-events': 'all',
+  'transition': 'opacity ease-in-out 1000ms',
 };
 
-// Add 30 to 250 (default modal size) due to up arrow
-const MODAL_HEIGHT = 280;
-
 // Mouse enter modal logic
-$(".modalPreview").mouseenter(function() {
+$('.modalPreview').mouseenter(function() {
   const mp = $(this);
   const height = mp.height();
-  mp.height("auto");
+  mp.height('auto');
   const autoHeight = mp.height();
   // Set back to original
   mp.height(height);
-  height <= MODAL_HEIGHT ? 
-    autoHeight > MODAL_HEIGHT && mp.find(".downArrow").css(cssObj) : 
-    mp.find(".upArrow").css(cssObj);
+  if (autoHeight > height || mp.find('.arrow').hasClass('up')) mp.find('.arrow').css(cssObj);
 });
 
 // Mouse leave modal logic
-$(".modalPreview").mouseleave(function() {
+$('.modalPreview').mouseleave(function() {
   const mp = $(this);
-  mp.find(".downArrow").css("opacity", "0");
-  mp.find(".upArrow").css("opacity", "0");
+  mp.find('.arrow').css('opacity', '0');
 });
 
 // Handles down arrow click event on modal
-const handleDownClick = (parentObj, currentObj) => {
-  if (!parentObj.hasClass("modalPreview")) {
-    currentObj = parentObj;
-    parentObj = parentObj.parent();
-  }
-  parentObj.height("auto");
-  let height = parentObj.css("height");
-  parentObj.height("250px");
-  parentObj.height(height);
-  // Hide down arrow
-  parentObj.css("pointer-events", "none");
-  currentObj.css({
-    "opacity": "0",
-    "height": `${parseInt(height) - 250 + 32}px`
-  });
+const handleDownClick = (modalPreview, arrow) => {
+  // Set modal height to `auto`
+  modalPreview.height('auto');
+  let height = modalPreview.css('height');
+  modalPreview.height('250px');
+  modalPreview.height(height);
+
+  // Temporarily disable pointer events for modal
+  disablePointerEvents(modalPreview)
+
+  // Change down arrow to up arrow
+  arrow.addClass('up');
+  const iconClasses = arrow.find('i')[0].classList;
   setTimeout(() => {
-    currentObj.css("display", "none");
-    parentObj.css("pointer-events", "all");
-  }, 800);
+    iconClasses.remove('fa-chevron-down');
+    iconClasses.add('fa-chevron-up');
+  }, 1000);
+
   // Turn overlay inactive
-  parentObj.find(".overlay").addClass("inactive");
-  setTimeout(() => {
-    parentObj.find(".upArrow").css("opacity", "1");
-  }, 100);
+  modalPreview.find('.overlay').removeClass('active');
 }
 
 // Handles up arrow click event on modal
-const handleUpClick = (parentObj) => {
-  if (!parentObj.hasClass("modalPreview")) {
-    currentObj = parentObj;
-    parentObj = parentObj.parent();
-  }
-  parentObj.height("250px");
-  // Show down arrow
-  const downArrowObj = parentObj.find(".downArrow");
-  downArrowObj.css({
-    "height": "32px"
-  });
+const handleUpClick = (modalPreview, arrow) => {
+  // Reset modal height to default
+  modalPreview.height('250px');
+
+  // Temporarily disable pointer events for modal
+  disablePointerEvents(modalPreview)
+
+  // Change up arrow to down arrow
+  arrow.removeClass('up');
+  const iconClasses = arrow.find('i')[0].classList;
+  setTimeout(() => {
+    iconClasses.remove('fa-chevron-up');
+    iconClasses.add('fa-chevron-down');
+  }, 1000);
+
   // Turn overlay active
-  parentObj.find(".overlay").removeClass("inactive");
-  $("html, body").animate({
-    scrollTop: parentObj.offset().top
-  }, "medium");
-  setTimeout(() => { downArrowObj.css("display", "block") }, 800);
+  modalPreview.find('.overlay').addClass('active');
+  $('html, body').animate({
+    scrollTop: modalPreview.offset().top
+  }, 'medium');
+}
+
+function disablePointerEvents(modalPreview) {
+   // Temporarily disable pointer events
+   modalPreview.css('pointer-events', 'none');
+   setTimeout(() => {
+     modalPreview.css('pointer-events', 'all');
+   }, 800);
 }

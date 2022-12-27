@@ -218,25 +218,14 @@ html {
   opacity: 1;
 }
 
-.modalPreview .downArrow {
+.modalPreview .arrow {
   width: 100%;
   height: 30px;
   color: darkblue;
+  pointer-events: none;
   opacity: 0;
   position: absolute;
-  top: 220px;
-  text-align: center;
-  background-image: linear-gradient(to bottom, rgb(228, 239, 248), rgb(183, 209, 242));
-  animation: bobUpAndDown 1s linear infinite;
-  z-index: 3;
-}
-
-.modalPreview .upArrow {
-  width: 100%;
-  height: 30px;
-  color: darkblue;
-  position: relative;
-  bottom: 0px;
+  bottom: 0;
   text-align: center;
   background-image: linear-gradient(to bottom, rgb(228, 239, 248), rgb(183, 209, 242));
   animation: bobUpAndDown 1s linear infinite;
@@ -265,18 +254,22 @@ html {
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, rgba(0,0,0,0) 75%, rgb(228, 239, 248));
-  z-index: 2;
-  display: block;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
 }
 
-.modalPreview .overlay.inactive {
-  display: none;
+.modalPreview .overlay.active {
+  opacity: 1;
 }
 
 /* Include logo picture (left) and description (right) */
 .modalPreview .preview {
   pointer-events: none;
   display: flex;
+}
+
+.modalPreview .preview.collapse {
+  display:block;
 }
 
 .modalPreview .preview .logoRef {
@@ -346,14 +339,17 @@ html {
 .modalPreview .preview .text {
   padding-top: 20px;
   padding-right: 30px;
+  padding-bottom: 30px;
   font-family: "Exo", serif;
 }
 
 .modalPreview .rest {
   font-family: "Exo", serif;
   margin-top: 50px;
+  margin-bottom: 50px;
   margin-left: 5%;
   width: 90%;
+  z-index: 1000;
 }
 
 .modalPreview .rest .heading {

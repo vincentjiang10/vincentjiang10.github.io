@@ -30,11 +30,14 @@ function modalPreviewLogic(viewportWidth) {
     const autoHeight = parseInt(mp.height());
     console.log("auto height: " + autoHeight);
 
-    if (autoHeight <= 250) {
-      // Remove arrows, if any
+    // Toggle overlay
+    if (autoHeight > height) {
+      // Add overlay
+      mp.find('.overlay').addClass('active');
     }
     else {
-      // Add arrows, if none
+      // Remove overlay
+      mp.find('.overlay').removeClass('active');
     }
 
     // if (height <= 250) {

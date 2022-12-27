@@ -1,5 +1,6 @@
 // Create a modal preview
-function createModalPreview({
+function addModalPreview({
+  id,
   imgSrc, 
   logoStyle, 
   logoRef, // Add class="logoRef" // Add element <a> if defined
@@ -9,32 +10,43 @@ function createModalPreview({
   subHead2, 
   buttons,
   bodyText}) {
-  // Create the outer `div` element
-  const modalPreview = document.createElement('div');
-  modalPreview.classList.add('modalPreview');
+  // Get modal by `id`
+  const modalPreview =  document.getElementById(id);
 
   // Default element has opaque child element
   const overlay = document.createElement('div');
-  overlay.classList.add('overlay')
+  overlay.classList.add('overlay');
 
-  // Create the inner `div` elements
+  // Preview container
   const preview = document.createElement('div');
   preview.classList.add('preview');
 
+  // Create the inner `div` elements
   const div1 = document.createElement('div');
+  div1.classList.add('logoRef');
   const div2 = document.createElement('div');
 
   // Create the `logo` and `img` elements
   const logo = document.createElement('div');
-  logo.classList.add('logo');
+  logo.className = 'logo';
   logo.style = logoStyle;
 
-  const img = document.createElement('img');
-  img.src = `assets/images/${imgSrc}`;
-  img.style = imgStyle;
+  const logoImg = document.createElement('img');
+  logoImg.src = `assets/images/${imgSrc}`;
+  logoImg.style = imgStyle;
 
-  logo.appendChild(img);
-  div1.appendChild(logo);
+  logo.appendChild(logoImg);
+
+  if (logoRef) {
+    const logoLink = document.createElement('a');
+    logoLink.href = logoRef;
+    logoLink.target = '_blank';
+    logoLink.appendChild(logo);
+    div1.appendChild(logoLink);
+  }
+  else {
+    div1.appendChild(logo);
+  }
 
   // Create the `heading`, `subHeading`, and `text` elements
   const heading = document.createElement('div');
@@ -49,7 +61,7 @@ function createModalPreview({
   const subHeading2 = document.createElement('div');
   subHeading2.classList.add('subHeading');
   subHeading2.style.color = 'black';
-  subHeading2.innerHTML = subHead2
+  subHeading2.innerHTML = subHead2;
 
   const text = document.createElement('div');
   text.classList.add('text');
@@ -59,46 +71,55 @@ function createModalPreview({
   div2.appendChild(subHeading1);
   div2.appendChild(subHeading2);
   div2.appendChild(text);
+  // Add buttons
+  buttons && div2.appendChild(createButtons(buttons));
 
   // Append `div1` and `div2` elements to the `preview` element
   preview.appendChild(div1);
   preview.appendChild(div2);
 
-  //-- Arrow elements --
-  // TODO: fix arrow error (relative position -> Modal height should be 250px)
-  // Create the down arrow element
-  const downArrow = document.createElement('div');
-  downArrow.className = 'downArrow';
-  const downArrowIcon = document.createElement('i');
-  downArrowIcon.className = 'fa fa-chevron-down';
-  downArrowIcon.setAttribute('aria-hidden', 'true');
-  downArrow.appendChild(downArrowIcon);
-
-  // Create the up arrow element
-  const upArrow = document.createElement('div');
-  upArrow.className = 'upArrow';
-  const upArrowIcon = document.createElement('i');
-  upArrowIcon.className = 'fa fa-chevron-up';
-  upArrowIcon.setAttribute('aria-hidden', 'true');
-  upArrow.appendChild(upArrowIcon);
+  // Create the arrow element
+  const arrow = document.createElement('div');
+  arrow.className = 'arrow';
+  const arrowIcon = document.createElement('i');
+  arrowIcon.className = 'fa fa-chevron-down';
+  arrowIcon.setAttribute('aria-hidden', 'true');
+  arrow.appendChild(arrowIcon);
 
   // Append elements to the `modalPreview` element
   modalPreview.appendChild(overlay);
   modalPreview.appendChild(preview);
-  modalPreview.appendChild(downArrow);
-  modalPreview.appendChild(upArrow);
+  modalPreview.appendChild(arrow);
   
   return modalPreview;
 }
 
-// Add modal preview to parent element with id = [id]
-function addModalPreview({id, ...params}) {
-  // Call the createModalPreview function
-  const modalPreview = createModalPreview(params);
+// Creates buttons
+function createButtons(buttonData) {
+  // Create the buttons container element
+  const buttonsContainer = document.createElement("div");
+  buttonsContainer.classList.add("buttons");
 
-  // Get the element with id of [id]
-  const container = document.getElementById(id);
+  // Iterate through the button data array
+  for (const {href, icon} of buttonData) {
+    // Create the button element
+    const buttonElement = document.createElement("a");
+    buttonElement.classList.add("button");
+    buttonElement.href = href;
+    buttonElement.target = "_blank";
 
-  // Append the modal preview element to the container element
-  container.appendChild(modalPreview);
+    // Create the button icon element
+    const iconElement = document.createElement("i");
+    iconElement.classList.add("fa");
+    iconElement.classList.add(icon);
+    iconElement.setAttribute("aria-hidden", "true");
+
+    // Add the icon element to the button element
+    buttonElement.appendChild(iconElement);
+
+    // Add the button element to the buttons container
+    buttonsContainer.appendChild(buttonElement);
+  }
+
+  return buttonsContainer;
 }

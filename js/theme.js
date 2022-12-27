@@ -58,7 +58,7 @@ theme.addEventListener('mouseenter', function() {
   // Change cursor
   theme.style.cursor = "grab";
 })
-theme.addEventListener('mouseleave', event => {
+theme.addEventListener('mouseleave', function() {
   // Change cursor
   theme.style.cursor = "pointer";
 
@@ -147,9 +147,10 @@ function handleMouseUp(event) {
     const backgroundPosition = computedStyle.getPropertyValue('background-position');
 
     const [x, y] = backgroundPosition.split(' ').map(value => parseInt(value, 10));
+    
     const animation = child.animate([
       { backgroundPosition: `${x}px ${y}px` },
-      { backgroundPosition: `${x + 5000 * dx / dist}px ${y + 5000 * dy / dist}px` },
+      { backgroundPosition: `${x + ((5000 * dx / dist) || 0)}px ${y + ((5000 * dy / dist) || 0)}px` },
     ], {
       duration: 5000 / speed,
       iterations: Infinity,

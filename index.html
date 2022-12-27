@@ -120,6 +120,7 @@
                 </div>
               </div>
               <div>
+                <!-- TODO: fix margin when expanded by arrow -->
                 <div class="heading">
                   Cornell University
                 </div>
@@ -139,16 +140,15 @@
                     Linear Algebra
                   </span>
                 </div>
+                <div class="text"></div>
               </div>
             </div>
-            <div class="downArrow">
+            <div class="arrow">
               <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </div>
-            <div class="upArrow">
-              <i class="fa fa-chevron-up" aria-hidden="true"></i>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
 
@@ -157,18 +157,42 @@
       <div class="contentItem">
         <div class="header">EXPERIENCE</div>
         <div class="body" id="experience-body">
-          <script>
-            // Roblox
-            addModalPreview(Content.ROBLOX);
-            // Yoomi
-            addModalPreview(Content.YOOMI);
-            // Cornell Cup Robotics
-            addModalPreview(Content.CUP);
-            // Cornell Bowers CIS
-            addModalPreview(Content.CIS);
-            // Cornell Engineering
-            addModalPreview(Content.CORNELL_ENG);
-          </script>
+
+          <div class="modalPreview" id="roblox">
+            <script>
+              // Roblox
+              addModalPreview(Content.ROBLOX);
+            </script>
+          </div>
+
+          <div class="modalPreview" id="yoomi">
+            <script>
+              // Yoomi
+              addModalPreview(Content.YOOMI);
+            </script>
+          </div>
+
+          <div class="modalPreview" id="cup">
+            <script>
+              // Cup Robotics
+              addModalPreview(Content.CUP);
+            </script>
+          </div>
+
+          <div class="modalPreview" id="cis">
+            <script>
+              // Cornell Bowers CIS
+              addModalPreview(Content.CIS);
+            </script>
+          </div>
+
+          <div class="modalPreview" id="cornell-eng">
+            <script>
+              // Cornell Engineering
+              addModalPreview(Content.CORNELL_ENG);
+            </script>
+          </div>
+
         </div>
       </div>
     </section>
@@ -241,11 +265,8 @@
                 <source src="assets/videos/adjacent-animation.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="downArrow">
+            <div class="arrow">
               <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </div>
-            <div class="upArrow">
-              <i class="fa fa-chevron-up" aria-hidden="true"></i>
             </div>
           </div>
           <!-- Terrain Map project -->
@@ -341,11 +362,8 @@
                 <source src="assets/videos/light.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="downArrow">
+            <div class="arrow">
               <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </div>
-            <div class="upArrow">
-              <i class="fa fa-chevron-up" aria-hidden="true"></i>
             </div>
           </div>
           <!-- Choice Game project -->
@@ -389,11 +407,8 @@
                 <source src="assets/videos/choice-game.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="downArrow">
+            <div class="arrow">
               <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </div>
-            <div class="upArrow">
-              <i class="fa fa-chevron-up" aria-hidden="true"></i>
             </div>
           </div>
         </div>
