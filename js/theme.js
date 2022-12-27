@@ -89,7 +89,6 @@ theme.addEventListener('mousemove', (event) => {
 
   // Update animation
   changeAnimation((child) => {
-    // TODO: See if you can remove this part
     const computedStyle = window.getComputedStyle(child);
     const backgroundPosition = computedStyle.getPropertyValue('background-position');
 

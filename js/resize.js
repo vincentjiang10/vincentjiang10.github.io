@@ -26,11 +26,9 @@ function modalPreviewLogic(viewportWidth) {
     const mp = $(this);
     const height = parseInt(mp.height());
     const thres = 10;
-    console.log("height: " + height);
     // Find auto height
     mp.height("auto");
     const autoHeight = parseInt(mp.height());
-    console.log("auto height: " + autoHeight);
 
     // Toggle overlay
     if (autoHeight > height + thres) {
@@ -56,5 +54,4 @@ function modalPreviewLogic(viewportWidth) {
     // Change back to default height 
     height <= 250 && mp.height(height);
   });
-  console.log(viewportWidth);
 }
