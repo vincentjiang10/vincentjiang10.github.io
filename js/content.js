@@ -30,7 +30,7 @@ const Content = {
     imgStyle: "box-shadow: 0px 0px 20px rgb(249, 77, 77)",
     head: "Cornell Cup Robotics",
     subHead1: "Software Engineer",
-    subHead2: "February 2022 &#8212; Present",
+    subHead2: "February 2022 &#8212; January 2023",
     bodyText: "Translate user speech inputs into text using machine learning and natural language \
                processing as part of the CS Chatbot team."
   },
@@ -67,7 +67,7 @@ const Content = {
     imgStyle: "box-shadow: 0px 0px 20px rgb(235, 180, 76)",
     head: "Pac-Camel",
     subHead1: "OCaml, Bogue, SDL",
-    subHead2: "October 2022 &#8212; December 2022",
+    subHead2: "September 2022 &#8212; December 2022",
     buttons: [{href: "https://github.com/vjiang10/pac-camel", icon: "fa-github-square"}],
     bodyText: "Camel version of Pac-Man. Features include random map generation, controls and movements, \
                power-ups and items."
