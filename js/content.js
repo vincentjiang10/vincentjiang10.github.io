@@ -54,7 +54,7 @@ const Content = {
     imgStyle: "box-shadow: 0px 0px 20px rgb(234, 190, 190)",
     head: "Cornell Engineering",
     subHead1: "Computer Science and Mathematics Tutor",
-    subHead2: "January 2022 &#8212; May 2022",
+    subHead2: "January 2022 &#8212; Present",
     bodyText: "Tutor and advise students in Object-Oriented Programming (CS 2110) and \
                Multivariable Calculus (MATH 1920) under the Engineering Learning Initiatives Program."
   },
