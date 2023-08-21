@@ -7,7 +7,8 @@ const Content = {
     head: "Roblox",
     subHead1: "Software Engineer Intern",
     subHead2: "Summer 2023",
-    bodyText: "Coming Soon!",
+    bodyText:
+      "Contributed to Roblox Studio using C++: Developed plugin capabilities infrastructure for writing and fetching plugin metadata, allowing for flexible plugin behavior and smoother interactions for Roblox game developers creating through Studio",
   },
 
   YOOMI: {

@@ -58,7 +58,7 @@ html {
 }
 
 .sidenav .profilePic img {
-  transform: scale(1.4) translateX(-5px);
+  transform: scale(1.4) translateY(2px);
 }
 
 .sidenav .profileDesc {
