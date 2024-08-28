@@ -1,6 +1,18 @@
 const Content = {
-  ROBLOX: {
-    id: "roblox",
+  ROBLOX2: {
+    id: "roblox2",
+    imgSrc: "roblox.png",
+    logoStyle: "background: radial-gradient(rgb(192,192,192), royalblue)",
+    imgStyle: "box-shadow: 0px 0px 20px rgb(200, 200, 200)",
+    head: "Roblox",
+    subHead1: "Software Engineer Intern",
+    subHead2: "Summer 2024",
+    bodyText:
+      "Automated metrics data generation and anomaly detection workflows by creating a RESTful API service using ASP.NET Core and C# to schedule workflows in controlled, reproducible TeamCity build environment. Added dashboard to visualize time-series metrics data and schedule workflows.",
+  },
+
+  ROBLOX1: {
+    id: "roblox1",
     imgSrc: "roblox.png",
     logoStyle: "background: radial-gradient(rgb(192,192,192), royalblue)",
     imgStyle: "box-shadow: 0px 0px 20px rgb(200, 200, 200)",
@@ -8,7 +20,7 @@ const Content = {
     subHead1: "Software Engineer Intern",
     subHead2: "Summer 2023",
     bodyText:
-      "Contributed to Roblox Studio using C++: Developed plugin capabilities infrastructure for writing and fetching plugin metadata, allowing for flexible plugin behavior and smoother interactions for Roblox game developers creating through Studio",
+      "Contributed to Roblox Studio using C++: Developed plugin capabilities infrastructure for writing and fetching plugin metadata, allowing for flexible plugin behavior and smoother interactions for Roblox game developers creating through Studio.",
   },
 
   YOOMI: {
